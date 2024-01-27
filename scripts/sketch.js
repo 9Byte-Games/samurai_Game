@@ -7,9 +7,6 @@ function preload() {
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
     frameRate(60);
-
-    console.log("setup complete");
-    //test
 }
 
 function draw() {
