@@ -9,6 +9,7 @@ function setup() {
     frameRate(60);
 
     console.log("setup complete");
+    //test
 }
 
 function draw() {
