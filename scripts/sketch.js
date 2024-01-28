@@ -14,3 +14,7 @@ function draw() {
     fill(255);
     text("Hello World!", 10, 10);
 }
+
+function movement() {
+    
+}
