@@ -1,7 +1,7 @@
 # Game Design: Samurai Sensei Game
 
 ## Overzicht
-"Samurai Game* is a game in which you, as the Main Character (MC), suffer from amnesia, and through platformer gameplay, you must retrieve your lost memories.
+"Samurai Sensei* is a game in which you, as the Main Character (MC), suffer from amnesia, and through platformer gameplay, you must retrieve your lost memories.
 
 The way this operates is as follows: by engaging in platforming, you progress through new levels and face new challenges. After overcoming a series of rooms, you can discover something that triggers a flashback, allowing you to regain some of your forgotten skills. This, in turn, leads to new levels being unlocked.
 
@@ -59,44 +59,40 @@ The Core Mechanics Diagram:
 
 ### 1. Game Mechanics
 - **Rules:**
-  - Elemental Outbreak is a game within the match-3 genre. It implements an intuitive mechanism where players can swap tiles vertically or horizontally to create matches. Longer matches activate 'tile-specials,' tied to the four elements (fire, water, earth, air). These specials manifest as natural disasters and assist in removing layers, a fundamental goal linked to player progression.
+  - Samurai Sensei is a game solely based around platforming, the more you play however, the more skills you get to change the movement and to make places that weren't reachable before, now reachable, being able to reach these places by gaining the skills is a fundamental part because this unlockes new levels to progress the story.
 
 - **Objectives:**
-  - The primary goal of Elemental Outbreak is to progress on the world map. Each world has 5 levels that must be defeated. Players must make strategic moves to create large combos and use special tiles, thus removing the required number of layers.
+  - The primary goal is to regain al of your memories by collecting mementos that let you regain your skills by means of flashbacks. The way you find these mementos is by having increasingly accurate flashbacks.
 
 - **Feedback:**
-  - The game employs visual and auditory feedback to enhance the player experience. Successful combos and the use of specials are accompanied by clear visual effects. Additionally, enjoyable sound effects contribute to the overall immersive experience. This feedback system aligns with the game's design principles and keeps the player engaged.
+  - The player has a distinct visual- and audio effect when they use a skill. The higher a skills rank is, the more flashy the skills are. This all is done to increase the players engagement and make them feel more empowered when using their skills.
 
 
 ### 2. Graphics
 - **Visual Style:**
-  - Elemental Outbreak features a distinctive visual style determined through interviews with potential end-users. The style is associated with 'antiquity' and natural disasters, aligning with the overarching design principle of visual coherence.
+  - The game will be 2d and have visuals of a dated medieval Japanese country, like it's currently in a war and thus the surroundings looks war torn.
 
 - **Character Design:**
-  - The game is not centered around characters and, in principle, does not have character design. However, the tiles can be seen as characters in themselves, each with unique properties contributing to the overall vision. The design allows players to easily recognize and understand the tiles, maintaining coherence within the visual style.
+  - The character will be a samurai without a current master (ronin) and is looking to regain his lost memories by roaming the world (and following flashbacks?).
 
 - **Environment Design:**
-  - The world map is divided into 3 different worlds, each with a unique setting:
-    - The Forest
-    - Snowy Peaks
-    - The Forgotten Castle
-  This choice aims to give the game a unique feel and retain the player's attention.
+  - Samurai Sensei's visual style is based on a medieval Japanese (1500) / Edo Period (1600 - 1800) timeline and will have some surroundings that looks dated (overgrown with plants, barren land, etc.) and forgotten, but also bustling towns/cities (where the surroundings may still look somewhat dated).
 
 
 ### 3. Sound
 - **Music:**
-  - Elemental Outbreak's soundtrack provides a calming experience, utilizing ambient music instead of traditional game music. Each world has its own soundtrack, adding more personality to the game. The calming experience is a key point derived from user interviews and is central to the game's accessibility.
+  - The game should have music depending on the surroundings and current action that is being undertaken. If the player is currently in town it should be a lively song, as so are the villagers around them. If, however, the player is in a wilderness all alone while they're platforming, the music should be calming / eery (depending on the visual environment). The game should also have a faster song that is meant to force the player to speed up, or focus more on the task at hand, like getting to an objective on time.
 
 - **Sound Effects:**
-  - Sound effects play a significant role in Elemental Outbreak, matching the unique element tiles. High-quality sound effects enhance the player experience.
+  - Sound effects play a significant role in Samurai Sensei, the sounds should correlate to the skills that are used. They should also give feedback based on the stats of the current skill / stat level.
 
 
 ### 4. Story
 - **Storyline:**
-  - The story is not central to Elemental Outbreak. Players progress through worlds and levels without a strong narrative focus. This decision is based on user interviews, indicating a preference for an easy-to-pick-up mobile game. It aligns with the design principles of accessibility and approachability.
+  - The main character (a samurai, currently without a master) has amnesia and has to find mementos based on the current paths he has open to him and the flashbacks that he is getting while getting closer to the the objective. These objectives can be different items, but are mainly memento's. These different objectives also unlock skills, these regained skills will then open a new way for the samurai to explore and find new memento's/objects.
 
 - **Characters:**
-  - Element tiles serve as the characters in Elemental Outbreak. Each tile type has its role in activating disasters. The minimalist approach to characters aligns with the design principles, emphasizing simple and accessible gameplay over complex characters.
+  - The main character is a samurai currently without a master, but before losing his memories, he did have one. The story for our character is based on him finding his master, while searching for him he will acquire the help from former friends of his master and people acquainted to him and his former master. The friends/acquaintices help the young samurai in his journey to find his master.
 
 
 ### 5. User Interface (UI)
