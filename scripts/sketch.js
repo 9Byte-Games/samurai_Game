@@ -10,4 +10,7 @@ function setup() {
 }
 
 function draw() {
+    background(0);
+    fill(255);
+    text("Hello World!", 10, 10);
 }
