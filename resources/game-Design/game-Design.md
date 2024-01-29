@@ -100,34 +100,34 @@ The Core Mechanics Diagram:
   - The UI is designed with accessibility in mind, keeping it simple for easy player adoption. Minimal HUD elements ensure a smooth and seamless experience for the player.
 
 - **Controls:**
-  - Controls are optimized for mobile use, allowing players to easily swap tiles and utilize UI/HUD elements. Elements are appropriately sized, ensuring clarity for the player to execute inputs effortlessly.
+  - Controls are optimized for use on a pc, the controls should be intuitive and easy to understand. The game will also have controller controls and will thus also be playable on a controller like the dualshock 4.
 
 
 ### 6. Gameplay
 - **Player Interaction:**
-  - Player interaction revolves around swapping tiles to create matches. Players must think strategically to create longer rows for activating tile specials.
+  - Player interaction revolves around the use of skills and upgrading stats to interact with the environment differently, meaning that different stats can have different interactions with the platforms in a level.
 
 - **Balance:**
-  - Game balance is reflected in level design. Initial screens of levels are predetermined, and falling tiles after layer removal are randomly sorted. To reduce the RNG impact, the game includes an extra turn feature, allowing players a double move when stuck.
+  - Game balance is reflected in level design. Initial screens of levels are predetermined, and falling tiles after layer removal are randomly sorted. To reduce the RNG impact, the game includes an extra turn feature, allowing players a double move when stuck. Levels are predetermined and are to be completed in a set sequence when playing the game, certain parts of the game can't be accessed without the skills required to go further in the levels after.
 
 
 ### 7. Technology
 - **Platform:**
-  - Elemental Outbreak is exclusively designed as a mobile game, aligning with the preferences of the 16-26 age demographic. This platform choice also supports the design principles of an accessible game experience.
+  - Elemental Outbreak is exclusively designed as a pc game, aligning with the preferences of the 16-26 age demographic.
 
 - **Performance:**
-  - With good code optimization and considering the power of modern phones, this game should run smoothly on most systems.
+  - With good code optimization and considering the power of modern pc's and laptops, this game should run smoothly on most systems.
 
 
 ### 8. Level Design
 - **Visual:**
-  - Level design is consistent, with the initial composition of tiles predetermined. Random tiles fall on top, and levels feature a pleasing background design. Tiles themselves are slightly transparent for a visually appealing effect.
+  - Level design is consistent, and it's all based on a war torn Medieval Japan, in which the world is barren, but there are also parts of overgrown wilderness.
   
 
 ### 9. Social Elements
 - **Multiplayer Features:**
-  - Elemental Outbreak includes a leaderboard for each level, showcasing players who completed a level in the fewest moves. This introduces a competitive element, encouraging players to aim for the fewest moves in each level.
+  - Currently there are no multiplayer elements next to achievements planned. Possibly a leaderboard based on clear time.
 
 ---
 
-## Conclusie
+## Conclusion
