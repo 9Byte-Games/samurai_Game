@@ -14,15 +14,19 @@ function setup() {
 
 function draw() {
     background(200);
-    fill(255);
-    text("Hello World!", 10, 10);
+
+    //print healthBar and gameover If dead
     health.show();
+    if (!health.healthBar[0]) {
+        health.gameOver();
+    }
 }
 
 function movement() {
 
 }
 
+//used to test damage with keypresses
 function keyPressed() {
     if (keyCode === 74) {
         health.damage(1);

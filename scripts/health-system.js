@@ -18,14 +18,16 @@ class Health {
 
         //needed images
         this.hearthFull = loadImage("resources/graphics/ui/health/heart full.png")
-        this.hearthEmpty = loadImage("resources/graphics/ui/health/heart empty.png")
-        this.hearthBlack = loadImage("resources/graphics/ui/health/heart black.png")
+        this.hearthEmpty = loadImage("resources/graphics/ui/health/heart black.png")
 
         //array current health
         this.healthBar = [];
         this.healthBar.push(true, true, false)
+
+
     }
 
+    //draws the current full and empty health
     show() {
         //tracker for print location
         let countX = 0;
@@ -45,26 +47,22 @@ class Health {
                 }
             }
             if (!this.healthBar[i]) {
-                image(this.hearthBlack, printLocationX, printLocationY, this.maxSizeImage, this.maxSizeImage)
+                image(this.hearthEmpty, printLocationX, printLocationY, this.maxSizeImage, this.maxSizeImage)
                 countX++
             }
         }
 
     }
 
-    //remove full health, add empty health
+    //remove full health from start of array, adds empty health at end of array
     damage(amount) {
         this.healthBar.splice(0, amount);
         for (let i = 0; i < amount; i++) {
             this.healthBar.push(false)
         }
-
-        if (!this.healthBar[0]) {
-            this.restartGame();
-        }
     }
 
-    //remove empty health, add full health
+    //remove empty health from end of array, add full health to start of array
     heal(amount) {
         this.healthBar.splice(-amount);
         for (let i = 0; i < amount; i++) {
@@ -72,9 +70,21 @@ class Health {
         }
     }
 
-    restartGame() {
-        //death
-
-        //restart game
+    //add gameOver screen and button to restart game.
+    gameOver() {
+        console.log("test")
+        fill(0, 0, 0);
+        // rect(width / 2, height / 2, 20, 20)
+        textSize(32);
+        textAlign(CENTER, CENTER);
+        text("Game Over", width / 2, height / 2);
+        if (!this.restartButton) {
+            this.restartButton = createButton("Restart Game");
+            this.restartButton.position(width / 2 -98/2, height / 2 + 16)
+            this.restartButton.mousePressed(() => {
+                setup();
+                this.restartButton.remove();
+            });
+        }
     }
 };
