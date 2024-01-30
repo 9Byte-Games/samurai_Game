@@ -5,6 +5,10 @@ function keyPressed() {
     if (key === 'l' || key === 'L') {
         toggleSkillMenu();
     }
+    if(key === 'q' || key === 'Q') {
+        console.log('hi')
+        roomManager.changeRoom('room' + 1);
+    }
     if (key === 'j' || key === 'J') {
         health.damage(1);
     } else if (key === 'k' || key === 'K') {
