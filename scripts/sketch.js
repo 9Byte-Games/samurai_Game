@@ -16,6 +16,10 @@ function setup() {
     console.log(callPlayerSkills())
     //create amount given health
     health = new Health(3);
+
+    roomManager = new RoomManager();
+
+    roomManager.changeRoom('startingRoom');
 }
 
 function draw() {
@@ -26,7 +30,10 @@ function draw() {
         health.gameOver();
     }
     drawPlayerSkills();
+
+    roomManager.draw();
 }
+
 
 function movement() {
 
