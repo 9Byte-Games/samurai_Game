@@ -1,4 +1,4 @@
-let skillMenuIsVisible = false;
+let playerSkillMenuIsVisible = false;
 
 function playerLearnSkill() {
     /**
@@ -21,19 +21,19 @@ function callPlayerSkills() {
     return player.skills;
 }
 
-function toggleSkillMenu() {
+function togglePlayerSkillMenu() {
     const skillMenu = document.getElementById("skillMenu");
     skillMenu.classList.toggle("hidden");
 
-    if (!skillMenuIsVisible) {
-        skillMenuIsVisible = true;
+    if (!playerSkillMenuIsVisible) {
+        playerSkillMenuIsVisible = true;
     } else {
-        skillMenuIsVisible = false;
+        playerSkillMenuIsVisible = false;
     }
 }
 
 // Function to display skills in the menu
-function drawSkills() {
+function drawLearnedSkills() {
     const skills = callPlayerSkills();
     const slotWidth = 150;
     const slotHeight = 50;
@@ -56,15 +56,11 @@ function drawSkills() {
     }
 }
 
-function keyPressed() {
-    // Handle key presses here
-    if (key === 'p' || key === 'P') {
-        toggleSkillMenu();
-    }
-}
-
 function drawPlayerSkills() {
-    if(skillMenuIsVisible) {
-        drawSkills();
+    if (playerSkillMenuIsVisible) {
+        drawLearnedSkills();
+    }
+    if (skillMenuIsVisible) {
+        drawUnlockableSkills();
     }
 }
