@@ -20,9 +20,13 @@ function draw() {
 }
 
 function movement() {
-    
+
 }
 
 function keyPressed() {
-    
+    if (keyCode === 74) {
+        health.damage(1);
+    } else if (keyCode === 75) {
+        health.heal(1);
+    }
 }
