@@ -1,3 +1,9 @@
+/**
+ * this class is used for the following parts:
+ * drawing health bar
+ * increasing and decreasing full health
+ * game over screen and resetting the game
+ */
 class Health {
     //call health with starting amount of health
     constructor(health) {
