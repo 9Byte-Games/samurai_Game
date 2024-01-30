@@ -27,6 +27,7 @@ function toggleSkillMenu() {
 
     if (!skillMenuIsVisible) {
         skillMenuIsVisible = true;
+        playerSkillMenuIsVisible = false;
     } else {
         skillMenuIsVisible = false;
     }
