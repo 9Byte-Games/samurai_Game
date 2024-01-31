@@ -1,4 +1,5 @@
 function keyPressed() {
+    if (!gameOver) {
     if (key === 'p' || key === 'P') {
         togglePlayerSkillMenu();
     }
@@ -14,6 +15,7 @@ function keyPressed() {
     } else if (key === 'k' || key === 'K') {
         health.heal(1);
     }
+}
 }
 
 //used to test health with keypresses

@@ -77,19 +77,34 @@ class Health {
         }
     }
 
-    //add gameOver screen and button to restart game.
+    //hides all buttons, add gameOver screen, and add button to restart game.
+    //button will delete all buttons and restart game
     gameOver() {
+
+
         console.log("test")
-        fill(0, 0, 0);
+        fill(150, 0, 0);
         textSize(32);
         textAlign(CENTER, CENTER);
         text("Game Over", width / 2, height / 2);
+        //only run if restart button doenst exist yet
         if (!this.restartButton) {
+            const hideButtons = document.getElementsByTagName("button");
+            hideButtons.forEach(button => {
+                button.remove();
+                console.log("working");
+            })
             this.restartButton = createButton("Restart Game");
             this.restartButton.position(width / 2 -98/2, height / 2 + 16)
             this.restartButton.mousePressed(() => {
+                const allButtons = document.getElementsByTagName("button");
+                //made in an array  to prevent itself from updating while deleting
+                const buttonArray = Array.from(allButtons);
+                buttonArray.forEach(button => {
+                    button.remove();
+                })
+                //restart game
                 setup();
-                this.restartButton.remove();
             });
         }
     }
