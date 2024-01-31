@@ -1,8 +1,9 @@
 const canvasWidth = 1280;
 const canvasHeight = 720;
 let player;
-
 let health;
+let gameOver = false;
+
 
 function preload() {
 }
@@ -22,16 +23,19 @@ function setup() {
     roomManager.changeRoom('startingRoom');
 }
 
+
 function draw() {
+    if (!health.healthBar[0]) {
+        gameOver = true
+        background(0, 20)
+        health.gameOver();
+    } else {
     background(200);
     //print healthBar and game over if zero full health
     health.show();
-    if (!health.healthBar[0]) {
-        health.gameOver();
-    }
     drawPlayerSkills();
-
     roomManager.draw();
+    }
 }
 
 
