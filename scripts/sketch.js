@@ -18,6 +18,9 @@ function setup() {
     //create amount given health
     health = new Health(3);
 
+    dialogueManager = new DialogueManager();
+    dialogueManager.callDialogue('dialogueExample');
+
     // creates new Room Manager
     roomManager = new RoomManager();
 
@@ -35,7 +38,11 @@ function draw() {
     background(200);
     health.show();
     drawPlayerSkills();
+
     roomManager.draw();
+
+    dialogueManager.draw();
+
     }
 }
 

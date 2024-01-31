@@ -1,0 +1,56 @@
+{
+    "0": {
+      "NPC": "John",
+      "dialogue": [
+        {
+          "text": "Hello, how can I help you?",
+          "options": [
+            {
+              "text": "I need some information.",
+              "next": "1"
+            },
+            {
+              "text": "Just passing by.",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    "1": {
+      "NPC": "John",
+      "dialogue": [
+        {
+          "text": "Sure, what do you want to know?",
+          "options": [
+            {
+              "text": "Tell me about the town.",
+              "next": "2"
+            },
+            {
+              "text": "Nevermind.",
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "NPC": "John",
+      "dialogue": [
+        {
+          "text": "Our town is a peaceful place...",
+          "options": [
+            {
+              "text": "thanks for the info.",
+              "next": null
+            },
+            {
+              "text": "sure is!",
+              "next": null
+            }
+          ]
+        }
+      ]
+    }
+  }
