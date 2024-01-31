@@ -18,6 +18,7 @@ function setup() {
     //create amount given health
     health = new Health(3);
 
+    // creates new Room Manager
     roomManager = new RoomManager();
 
     roomManager.changeRoom('startingRoom');
