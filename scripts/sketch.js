@@ -25,13 +25,13 @@ function setup() {
 
 
 function draw() {
+    //check if gameOVer else draw game like normal
     if (!health.healthBar[0]) {
         gameOver = true
         background(0, 20)
         health.gameOver();
     } else {
     background(200);
-    //print healthBar and game over if zero full health
     health.show();
     drawPlayerSkills();
     roomManager.draw();

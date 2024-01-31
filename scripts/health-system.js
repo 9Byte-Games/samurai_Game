@@ -87,7 +87,7 @@ class Health {
         textSize(32);
         textAlign(CENTER, CENTER);
         text("Game Over", width / 2, height / 2);
-        //hide buttons
+        //only run if restart button doenst exist yet
         if (!this.restartButton) {
             const hideButtons = document.getElementsByTagName("button");
             hideButtons.forEach(button => {
