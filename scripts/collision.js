@@ -18,7 +18,7 @@ class Collision {
             // Collision detected
             // Stop the player's movement by setting its velocity to 0
             player.vx = 0; 
-            player.vy = 0; 
+            player.vy = 0;
             return true;
         } else {
             // No collision

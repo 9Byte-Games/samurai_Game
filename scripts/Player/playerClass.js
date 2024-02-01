@@ -5,6 +5,8 @@ class Player {
         this.skills = [];
         this.x = x;
         this.y = y;
+        // this.vx = 0;
+        // this.vy = 0;
         this.width = width;
         this.height = height;
         this.jumpVelocity = 10;
@@ -44,6 +46,15 @@ class Player {
         //gives the player gravity if they are not on the ground
         if (!this.isGrounded && !this.isJumping) {
             this.y += 5;
+        }
+    }
+
+    // gebruik dit aub tijn research velocity en direction
+    setVelocity(direction, newVelocity) {
+        if (direction === 'x') {
+            this.vx = newVelocity;
+        } else if (direction === 'y') {
+            this.vy = newVelocity;
         }
     }
 
