@@ -2,7 +2,7 @@ class Room {
 
     constructor(roomNumber, w, h, type) {
         this.button = createButton(`room ${roomNumber}`);
-        this.button.position(100, 100);
+        this.button.position(windowWidth - 100, 20); // Adjust the position here
         this.button.hide();
 
         this.width = w;

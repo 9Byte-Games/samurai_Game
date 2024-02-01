@@ -1,12 +1,12 @@
 function keyPressed() {
-    if (!gameOver) {
+    if (gameOver) return;
     if (key === 'p' || key === 'P') {
         togglePlayerSkillMenu();
     }
     if (key === 'l' || key === 'L') {
         toggleSkillMenu();
     }
-    if(key === 'q' || key === 'Q') {
+    if (key === 'q' || key === 'Q') {
         console.log('hi')
         roomManager.changeRoom('room' + 1);
     }
@@ -16,6 +16,12 @@ function keyPressed() {
         health.heal(1);
     }
 }
+
+function keyReleased() {
+    //if the player released the spacebar, then stops the player from jumping
+    if (keyCode === 32 || keyCode === 38) {
+        player.isJumping = false;
+    }
 }
 
 //used to test health with keypresses

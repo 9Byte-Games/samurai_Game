@@ -4,7 +4,6 @@ let player;
 let health;
 let gameOver = false;
 
-
 function preload() {
 }
 
@@ -25,6 +24,7 @@ function setup() {
     roomManager = new RoomManager();
 
     roomManager.changeRoom('startingRoom');
+    createPlayer("playerOne");
 }
 
 
@@ -41,16 +41,20 @@ function draw() {
 
     roomManager.draw();
 
+
     dialogueManager.draw();
+
+    // Draw the platforms
+    rect(platform1.x, platform1.y, platform1.width, platform1.height)
+    //creates a rectangle that displays the player (for now)
+    rect(player.x, player.y, player.width, player.height);
+    //draw the platforms
+    console.log(platform1.x)
+    player.movement();
 
     }
 }
 
-
-function movement() {
-
-}
-
 function createPlayer(playerName) {
-    player = new Player(playerName);
+    player = new Player(100, 520, 100, 200, playerName);
 }
