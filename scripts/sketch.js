@@ -17,6 +17,9 @@ function setup() {
     //create amount given health
     health = new Health(3);
 
+    dialogueManager = new DialogueManager();
+    dialogueManager.callDialogue('dialogueExample');
+
     // creates new Room Manager
     roomManager = new RoomManager();
 
@@ -35,7 +38,12 @@ function draw() {
     background(200);
     health.show();
     drawPlayerSkills();
+
     roomManager.draw();
+
+
+    dialogueManager.draw();
+
     // Draw the platforms
     rect(platform1.x, platform1.y, platform1.width, platform1.height)
     //creates a rectangle that displays the player (for now)
@@ -43,6 +51,7 @@ function draw() {
     //draw the platforms
     console.log(platform1.x)
     player.movement();
+
     }
 }
 
