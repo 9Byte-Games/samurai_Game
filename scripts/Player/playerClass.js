@@ -15,6 +15,8 @@ class Player {
     }
 
     movement() {
+        //checks if the player is touching the platform
+        platform1.checkCollision(player);
         //sets isGrounded to true if player is touching the ground
         if (this.y < canvasHeight - this.height) {
             this.isGrounded = false;
