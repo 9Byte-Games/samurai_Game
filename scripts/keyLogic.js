@@ -19,7 +19,7 @@ function keyPressed() {
 
 function keyReleased() {
     //if the player released the spacebar, then stops the player from jumping
-    if (keyCode === 32) {
+    if (keyCode === 32 || keyCode === 38) {
         player.isJumping = false;
     }
 }
