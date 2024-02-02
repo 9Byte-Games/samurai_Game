@@ -5,8 +5,8 @@ class Player {
         this.skills = [];
         this.x = x;
         this.y = y;
-        // this.vx = 0;
-        // this.vy = 0;
+        this.vx = 0;
+        this.vy = 0;
         this.width = width;
         this.height = height;
         this.jumpVelocity = 10;
@@ -28,33 +28,36 @@ class Player {
         //checks if the A button or left arrow, then moves the player to the left
         if (this.x > 0) {
             if (keyIsDown(65) || keyIsDown(37)) {
-                this.x -= 10;
+                this.setVelocity('x', 10, -1);
+                this.x += this.vx;
             }
         }
         //checks if the D button or right arrow, then moves the player to the right
         if (this.x < canvasWidth - this.width) {
             if (keyIsDown(68) || keyIsDown(39)) {
-                player.x += 10;
+                this.setVelocity('x', 10, 1);
+                this.x += this.vx;
             }
         }
         //checks if the W button, up arrow or spacebar is pressed, then moves the player up using the jump function
         if (this.isGrounded || this.isJumping) {
             if(keyIsDown(87) || keyIsDown(38) || keyIsDown(32)) {
+                this.setVelocity('y', 10, 1);
                 this.doJump();
             }
         }
         //gives the player gravity if they are not on the ground
         if (!this.isGrounded && !this.isJumping) {
-            this.y += 5;
+            this.y += this.vy;
         }
     }
 
     // gebruik dit aub tijn research velocity en direction
-    setVelocity(direction, newVelocity) {
+    setVelocity(direction, newVelocity, directionAxis) {
         if (direction === 'x') {
-            this.vx = newVelocity;
+            this.vx = newVelocity * directionAxis;
         } else if (direction === 'y') {
-            this.vy = newVelocity;
+            this.vy = newVelocity * directionAxis;
         }
     }
 
@@ -62,7 +65,7 @@ class Player {
     doJump() {
         this.isJumping = true;
         this.isGrounded = false;
-        this.y -= this.jumpVelocity;
+        this.y -= this.vy;
         if (this.tempY < this.y) {
             this.isJumping = false;
         }
