@@ -45,7 +45,9 @@ function draw() {
     dialogueManager.draw();
 
     // Draw the platforms
-    rect(platform1.x, platform1.y, platform1.width, platform1.height)
+    platforms.forEach(platform => {
+        rect(platform.x, platform.y, platform.width, platform.height)
+    });
     //creates a rectangle that displays the player (for now)
     rect(player.x, player.y, player.width, player.height);
     //draw the platforms
