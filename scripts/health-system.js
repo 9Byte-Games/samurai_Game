@@ -156,7 +156,10 @@ class Health {
                 console.log("working");
             })
             this.restartButton = createButton("Restart Game");
-            this.restartButton.position(width / 2 - 98 / 2, height / 2 + 16)
+            this.restartButton.style('position', 'absolute');
+            this.restartButton.style('left', '50%');
+            this.restartButton.style('top', '53%');
+            this.restartButton.style('transform', 'translate(-50%, -50%)');
             this.restartButton.mousePressed(() => {
                 const allButtons = document.getElementsByTagName("button");
                 //made in an array  to prevent itself from updating while deleting
