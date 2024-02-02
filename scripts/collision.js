@@ -16,16 +16,19 @@ class Collision {
             player.y + player.height > this.y
         ) {
             // Collision detected
-            // Stop the player's movement by setting its velocity to 0
-            player.vx = 0; 
-            player.vy = 0;
+            console.log('collision')
             return true;
         } else {
             // No collision
+            console.log('no collision')
             return false;
         }
     }
 }
 
 // Create the platforms
-let platform1 = new Collision(600, 600, 200, 20, 'platform');
+
+const platforms = [
+    platform1 = new Collision(600, 600, 200, 20, 'platform'),
+    platform2 = new Collision(200, 500, 200, 20, 'platform'),
+]
