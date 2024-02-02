@@ -25,7 +25,7 @@ class Health {
 
         //array current health
         this.healthBar = [];
-        increaseMax(health);
+        this.increaseMax(health);
     }
 
     /**
@@ -92,7 +92,7 @@ class Health {
      */
     increaseMax(amount) {
         for(let i = 0; i < amount; i++) {
-            if (this.healthBar.length < healthBarMaxSize) {
+            if (this.healthBar.length < this.healthBarMaxSize) {
                 this.healthBar.unshift(true);
             } else {
                 console.log("Max health has already reached the max size");
