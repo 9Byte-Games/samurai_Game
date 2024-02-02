@@ -14,7 +14,8 @@ class Health {
         this.distanceBetweenImages = 5;
         this.healthBarMaxSize = 20;
         this.healthBarRows = 3;
-        this.absoluteMinimumMaxHealth = 1; 
+        this.absoluteMinimumMaxHealth = 1;
+        this.damageCooldown = 3000;
 
         //health bar starts at vectors
         this.startDrawingAtVector = createVector(this.startDrawingAtX, this.startDrawingAtY);
@@ -26,6 +27,9 @@ class Health {
         //array current health
         this.healthBar = [];
         this.increaseMax(health);
+
+        //last time damaged
+        this.lastDamageTime = 0;
     }
 
     /**
@@ -42,7 +46,7 @@ class Health {
             let nextRow = this.healthBarMaxSize / this.healthBarRows;
             if (drawAtColumn >= nextRow) {
                 drawAtColumn = 0;
-                drawAtRow ++;
+                drawAtRow++;
             }
             let printLocationX = this.startDrawingAtVector.x + (drawAtColumn * (this.maxSizeImage + this.distanceBetweenImages))
             let printLocationY = this.startDrawingAtVector.y + (drawAtRow * (this.maxSizeImage + this.distanceBetweenImages))
@@ -72,9 +76,28 @@ class Health {
         for (let i = 0; i < amount; i++) {
             this.healthBar.push(false)
         }
+        this.lastDamageTime = millis();
     }
 
-    
+    /**
+     * checks if the time sinds lastDamageTime is longer than damageCooldown, if it is then
+     * remove full health from start of array, adds empty health at end of array
+     * @param {number} amount - Amount of damage received
+     */
+    damageWithCooldownCheck(amount) {
+        if (millis() - this.lastDamageTime >= this.damageCooldown) {
+            this.healthBar.splice(0, amount);
+            for (let i = 0; i < amount; i++) {
+                this.healthBar.push(false)
+            }
+            this.lastDamageTime = millis();
+        } else {
+            console.log("Damage is still on cooldown")
+        }
+
+    }
+
+
     /**
      * remove empty health from end of array, add full health to start of array
      * @param {number} amount - Amount of healing
@@ -91,13 +114,13 @@ class Health {
      * @param {number} amount - Amount of increased max health, until the same as healthBarMaxSize.
      */
     increaseMax(amount) {
-        for(let i = 0; i < amount; i++) {
+        for (let i = 0; i < amount; i++) {
             if (this.healthBar.length < this.healthBarMaxSize) {
                 this.healthBar.unshift(true);
             } else {
                 console.log("Max health has already reached the max size");
             }
-        }        
+        }
     }
 
     /**
@@ -105,13 +128,13 @@ class Health {
      * @param {number} amount - Amount of decreased max health, until absoluteMinimumMaxHealth is reached.
      */
     decreaseMax(amount) {
-        for(let i = 0; i < amount; i++) {
+        for (let i = 0; i < amount; i++) {
             if (this.healthBar.length > this.absoluteMinimumMaxHealth) {
                 this.healthBar.splice(-1)
             } else {
                 console.log("Max health has already reached the absolute minimum");
             }
-        }     
+        }
     }
 
 
@@ -133,7 +156,7 @@ class Health {
                 console.log("working");
             })
             this.restartButton = createButton("Restart Game");
-            this.restartButton.position(width / 2 -98/2, height / 2 + 16)
+            this.restartButton.position(width / 2 - 98 / 2, height / 2 + 16)
             this.restartButton.mousePressed(() => {
                 const allButtons = document.getElementsByTagName("button");
                 //made in an array  to prevent itself from updating while deleting
@@ -142,7 +165,9 @@ class Health {
                     button.remove();
                 })
                 //restart game
-                setup();
+                // setup();
+                //refresh page
+                location.reload();
             });
         }
     }
