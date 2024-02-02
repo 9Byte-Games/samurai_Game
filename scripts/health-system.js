@@ -14,6 +14,7 @@ class Health {
         this.distanceBetweenImages = 5;
         this.healthBarMaxSize = 20;
         this.healthBarRows = 3;
+        this.absoluteMinimumMaxHealth = 1; 
 
         //health bar starts at vectors
         this.startDrawingAtVector = createVector(this.startDrawingAtX, this.startDrawingAtY);
@@ -24,12 +25,13 @@ class Health {
 
         //array current health
         this.healthBar = [];
-        for(let i = 0; i < health; i++) {
-            this.healthBar.push(true)
-        }
+        increaseMax(health);
     }
 
-    //draws the current full and empty health from the healthBar array, and places it in columns and rows using the set healthBarMaxSize and healthBarRows.
+    /**
+     * Draws the current full and empty health from the healthBar array, uses startDrawingAtX and startDrawingAtY for starting vector
+     * Columns and Rows are decided by healthBarMaxSize and healthBarRows.
+     */
     show() {
         //tracker for print location
         let drawAtColumn = 0;
@@ -61,7 +63,10 @@ class Health {
 
     }
 
-    //remove full health from start of array, adds empty health at end of array
+    /**
+     * remove full health from start of array, adds empty health at end of array
+     * @param {number} amount - Amount of damage 
+     */
     damage(amount) {
         this.healthBar.splice(0, amount);
         for (let i = 0; i < amount; i++) {
@@ -69,7 +74,11 @@ class Health {
         }
     }
 
-    //remove empty health from end of array, add full health to start of array
+    
+    /**
+     * remove empty health from end of array, add full health to start of array
+     * @param {number} amount - Amount of healing
+     */
     heal(amount) {
         this.healthBar.splice(-amount);
         for (let i = 0; i < amount; i++) {
@@ -77,11 +86,40 @@ class Health {
         }
     }
 
-    //hides all buttons, add gameOver screen, and add button to restart game.
-    //button will delete all buttons and restart game
+    /**
+     * increases max health by adding full health at the beginning of the array
+     * @param {number} amount - Amount of increased max health, until the same as healthBarMaxSize.
+     */
+    increaseMax(amount) {
+        for(let i = 0; i < amount; i++) {
+            if (this.healthBar.length < healthBarMaxSize) {
+                this.healthBar.unshift(true);
+            } else {
+                console.log("Max health has already reached the max size");
+            }
+        }        
+    }
+
+    /**
+     * decreases max health by removing health at the end of the array, this way empty health gets deleted first.
+     * @param {number} amount - Amount of decreased max health, until absoluteMinimumMaxHealth is reached.
+     */
+    decreaseMax(amount) {
+        for(let i = 0; i < amount; i++) {
+            if (this.healthBar.length > this.absoluteMinimumMaxHealth) {
+                this.healthBar.splice(-1)
+            } else {
+                console.log("Max health has already reached the absolute minimum");
+            }
+        }     
+    }
+
+
+    /**
+     * hides all buttons, add gameOver screen, and add button to restart game.
+     * restart button will delete all buttons and restart game
+     */
     gameOver() {
-
-
         console.log("test")
         fill(150, 0, 0);
         textSize(32);
