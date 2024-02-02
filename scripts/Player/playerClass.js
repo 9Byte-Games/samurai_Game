@@ -80,7 +80,7 @@ class Player {
         this.tempY = this.y;
     }
 
-    // pushes the learnt skill into the skill array.
+    //pushes the learnt skill into the skill array.
     learnSkill(skill) {
         this.skills.push(skill);
         console.log(`${this.name} learned ${skill.name}!`);
