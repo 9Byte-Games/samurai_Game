@@ -5,8 +5,8 @@ class Player {
         this.skills = [];
         this.x = x;
         this.y = y;
-        // this.vx = 0;
-        // this.vy = 0;
+        this.vx = 0;
+        this.vy = 0;
         this.width = width;
         this.height = height;
         this.jumpVelocity = 10;
@@ -14,6 +14,8 @@ class Player {
         this.isJumping;
         this.tempY = y;
         this.jumpTreshold = y - 200;
+        this.directionX;
+        this.directionY;
     }
 
     movement() {
@@ -28,24 +30,30 @@ class Player {
         //checks if the A button or left arrow, then moves the player to the left
         if (this.x > 0) {
             if (keyIsDown(65) || keyIsDown(37)) {
-                this.x -= 10;
+                this.directionX = -1;
+                this.setVelocity('x', 10);
+                this.x += this.vx * this.directionX;
             }
         }
         //checks if the D button or right arrow, then moves the player to the right
         if (this.x < canvasWidth - this.width) {
             if (keyIsDown(68) || keyIsDown(39)) {
-                player.x += 10;
+                this.directionX = 1;
+                this.setVelocity('x', 10);
+                this.x += this.vx * this.directionX;
             }
         }
         //checks if the W button, up arrow or spacebar is pressed, then moves the player up using the jump function
         if (this.isGrounded || this.isJumping) {
             if(keyIsDown(87) || keyIsDown(38) || keyIsDown(32)) {
+                this.directionY = -1;
+                this.setVelocity('y', 10);
                 this.doJump();
             }
         }
         //gives the player gravity if they are not on the ground
         if (!this.isGrounded && !this.isJumping) {
-            this.y += 5;
+            this.y += this.vy;
         }
     }
 
@@ -62,7 +70,7 @@ class Player {
     doJump() {
         this.isJumping = true;
         this.isGrounded = false;
-        this.y -= this.jumpVelocity;
+        this.y += this.vy * this.directionY;
         if (this.tempY < this.y) {
             this.isJumping = false;
         }
@@ -72,7 +80,7 @@ class Player {
         this.tempY = this.y;
     }
 
-    // pushes the learnt skill into the skill array.
+    //pushes the learnt skill into the skill array.
     learnSkill(skill) {
         this.skills.push(skill);
         console.log(`${this.name} learned ${skill.name}!`);
